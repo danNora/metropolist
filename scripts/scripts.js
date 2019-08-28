@@ -11,7 +11,9 @@ app.getCityData = () => {
 app.setEndpoint = function(cityName, queryItem) {
 	app.endpoint = `https://api.teleport.org/api/urban_areas/slug:${cityName}/${queryItem}`;
 	$.ajax({
-		url: app.endpoint
+		url: app.endpoint,
+		method: "GET",
+		dataType: "json"
 	});
 };
 
