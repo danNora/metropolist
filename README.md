@@ -1,24 +1,16 @@
-# Web Boilerplate
+# City Comparison App
 
-This provides basic files and folders for a basic website using HTML, SASS, and JS.
+## MVP
 
-Features include:
-1. HTML Skeleton
-2. Folders for images, JavaScript, and CSS
-3. SASS partials already imported into styles.scss file
-    * `_setup.scss` partial for normalize.css, clearfix, border-box, and visuallyHidden
-    * Empty `_typography.scss` partial
-    * Empty `_variables.scss` partial
+* City comparison app that displays side-by-side quality of life data between two “urban areas” returned from Teleport API
+* User choose two cities to compare through text input
+* Comparison results are dynamically updated
 
-## Dependencies
+## Stretch Goals
 
-This boilerplate uses the VS Code extension [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=ritwickdey.live-sass) to compile `styles.scss` to a `styles.css` file.
-
-## Instructions to use
-
-Copy+paste the following lines of code into command line:
-
-```
-git clone https://github.com/danielfitz/webBoilerplate.git
-read -p "Enter your repository name: " repoName && mv webBoilerplate $repoName && cd $repoName && rm -rf .git
-```
+* Ability to compare urban areas in an entire country
+* Same for continent
+* Search autocomplete
+* User toggles to personally weight the data
+* Definitive answer that city A is better than city B
+* Gamify the app
