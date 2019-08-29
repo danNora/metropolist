@@ -1,0 +1,9 @@
+.results {
+  display: flex;
+  justify-content: space-between;
+}
+
+.result {
+  flex: 1 1 50%;
+  max-width: 48%;
+}
