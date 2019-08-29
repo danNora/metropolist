@@ -170,6 +170,19 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
+html {
+  font-size: 125%;
+}
+
+.wrapper {
+  width: 95%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .results {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,6 +197,15 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
   max-width: 45%;
+}
+
+.scoreBar {
+  height: 0.5rem;
+  border-radius: 4rem;
+}
+
+.scoreBarFull {
+  background-color: #ddd;
 }
 
 img {
