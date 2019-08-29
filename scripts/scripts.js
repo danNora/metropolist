@@ -30,11 +30,13 @@ app.displayCityData = function(cityData) {
 	// const cityTeleportScore = cityData['/scores']['teleport_city_score'].toFixed(1);
 
 	// A div>ul to house all the <li>
-	const $result = $("<div class='result'>");
+	// const $result = $("<div class='result'>");
 	const $scoresList = $('<ul class="lQItems">');
 
 	// Get data out of objects
 	const cityName = cityData['/']['full_name'];
+	const $cityNameHtml = $(`<h2>${cityName}</h2>`);
+	$('.titleResults').append($cityNameHtml);
 
 	// Get city image url
 	const cityImage = cityData['/images'].photos[0].image.mobile;
@@ -44,7 +46,9 @@ app.displayCityData = function(cityData) {
 		`<div class="imgWrapper"><img src="${cityImage}" alt="Landscape of the city of ${cityName}"></div>`
 	);
 
-	const $cityTitle = $(`<h2>${cityName}</h2>`);
+	$('.imageResults').append($imageHtml);
+
+	// const $cityTitle = $(`<h2>${cityName}</h2>`);
 	// const $cityDescription = $('<p>city description</p>');
 
 	const cityScoreArray = cityData['/scores']['categories'];
@@ -52,7 +56,7 @@ app.displayCityData = function(cityData) {
 	cityScoreArray.forEach(function(score) {
 		const $score = $('<li class="lQItem">');
 		const $itemTitle = $('<h3 class="itemTitle">').text(score.name);
-		const $scoreNum = $('<span> class="scoreNum">').text(
+		const $scoreNum = $('<span class="scoreNum">').text(
 			score['score_out_of_10'] ? score['score_out_of_10'].toFixed(1) : 'N/A'
 		);
 
@@ -67,8 +71,8 @@ app.displayCityData = function(cityData) {
 		$scoresList.append($score);
 	});
 
-	$result.append($imageHtml, $cityTitle, $scoresList);
-	$('.results').append($result);
+	$('.scoresResults').append($scoresList);
+	// $('.scoresResults').append($result);
 };
 
 app.cleanUserInput = function(inputValue) {
@@ -86,7 +90,7 @@ app.init = function() {
 		app.userCity1 = app.cleanUserInput($('#location1').val());
 		app.userCity2 = app.cleanUserInput($('#location2').val());
 
-		$('.results').empty();
+		$('.imageResults, .titleResults, .scoresResults').empty();
 		app.getCityData(app.userCity1);
 		app.getCityData(app.userCity2);
 	});

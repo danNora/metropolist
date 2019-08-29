@@ -1,18 +1,66 @@
-.results {
+.imageResults,
+.titleResults,
+.scoresResults {
+	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	// background-color: blue;
+	justify-content: center;
+	align-items: center;
 }
 
-.result {
-	flex: 1 1 50%;
-	max-width: 45%;
+h2,
+.imgWrapper,
+.lQItems {
+	width: 50%;
+}
+
+.lQItem {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.lQItems:first-child {
+	border-right: 2px solid black;
+	.scoreBarFull {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		// ::after {
+		// 	content: '';
+		// 	display: block;
+		// 	width: 0.1rem;
+		// 	height: 100%;
+		// 	background-color: #fff;
+		// 	position: absolute;
+		// 	right: -0.05rem;
+		// }
+	}
+}
+.lQItems:last-child {
+	.lQItem {
+		flex-direction: row-reverse;
+	}
+	.itemTitle {
+		opacity: 0;
+	}
+}
+
+.itemTitle {
+	width: 100%;
+	flex: 1 1 100%;
 }
 
 .scoreBar {
 	height: 0.5rem;
-	border-radius: 4rem;
 }
 
 .scoreBarFull {
 	background-color: #ddd;
+	flex: 1 1 70%;
+}
+
+.scoreNum {
+	flex: 1 1 30%;
+	text-align: center;
 }
