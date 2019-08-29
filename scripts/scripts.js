@@ -36,52 +36,55 @@ app.parseCityData = function(cityData) {
   console.log(cityScoreArray);
 
   // Convert to HTML
-  const scoresHtml = $('.lQItems');
+  const $scores = $('<ul>').addClass("lQItems");
 
-  cityScoreArray.forEach(function(object) {
-    const itemTitle = `<h3 class="itemTitle">${object.name}</h3>`;
-    const scoreNum = `<span class="scoreNum">${Math.round(
-      object['score_out_of_10']
-    )}</span>`;
-    const scoreBarFill = `<div class='scoreBar scoreBarFill'></div>`;
+  cityScoreArray.forEach(function(score) {
+    const $score = $("<li>").addClass("lQitem");
 
-    const scoreBarFull = `<div class="scoreBar scoreBarFull"></div>`;
+    const $itemTitle = $("<h3>")
+      .addClass("itemTitle")
+      .text(score.name);
 
-    const scoreItem = `<li class="lQItem"></li>`;
+    const $scoreNum = $("<span>")
+      .addClass("scoreNum")
+      .text(Math.round(score['score_out_of_10']));
+    
+    const $scoreBarFull = $("<div>").addClass("scoreBar scoreBarFull");
+    const $scoreBarFill = $("<div>")
+      .addClass("scoreBar scoreBarFill")
+      .css("width", score['score_out_of_10'] * 10);
 
-    // app.displayCityData(parsedData);
+    $scoreBarFull.html($scoreBarFill);
+    $score.append($itemTitle, $scoreNum, $scoreBarFull);
+
+    $scores.append($score);
   });
 
-  app.displayCityData = function(parsedCityData) {
-    // jQuery happens here
-
-    app.parseCityData();
-  };
+  $("body").append($scores); // temporary for demonstration
+  
+  // app.displayCityData(parsedData);
 };
 
-app.convertUserInput = inputValue => {
+app.displayCityData = function(parsedCityData) {
+  // jQuery happens here
+
+  // app.parseCityData();
+};
+
+app.cleanUserInput = inputValue => {
   inputValue
     .trim()
     .toLowerCase()
     .split(' ')
     .join('-');
 };
+
 app.init = function() {
   $('#submit').on('click', async function(e) {
     e.preventDefault();
     //todo: function
-    app.userCity1 = $('#location1')
-      .val()
-      .trim()
-      .toLowerCase()
-      .split(' ')
-      .join('-');
-    app.userCity2 = $('#location2')
-      .val()
-      .trim()
-      .toLowerCase()
-      .split(' ')
-      .join('-');
+    app.userCity1 = cleanUserInput($('#location1').val());
+    app.userCity2 = cleanUserInput($('#location2').val());
 
     app.getCityData(app.userCity1);
     app.getCityData(app.userCity2);
