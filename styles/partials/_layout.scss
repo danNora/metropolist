@@ -1,9 +1,9 @@
 .results {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .result {
-  flex: 1 1 50%;
-  max-width: 48%;
+	flex: 1 1 50%;
+	max-width: 45%;
 }

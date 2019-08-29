@@ -1,103 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
 
-    <!-- CSS file -->
-    <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
 
-  <body>
-    <header>
-      <div class="wrapper">
-        <h1>app name</h1>
-        <p>description</p>
-      </div>
-    </header>
-    <main>
-      <div class="wrapper">
-        <section class="compare">
-          <form action="" class="setLocations">
-            <label for="location1" class="visuallyHidden">City1</label>
-            <input
-              type="text"
-              class="location"
-              id="location1"
-              placeholder="Name of a city (e.g. Toronto)"
-            />
-            <label for="location2" class="visuallyHidden">City2</label>
-            <input
-              type="text"
-              class="location"
-              id="location2"
-              placeholder="Name of another city (e.g. London)"
-            />
-            <input type="submit" value="compare!" id="submit" />
-          </form>
+  <!-- CSS file -->
+  <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
+</head>
 
-          <section class="results">
-            <div class="result result1">
-              <div class="imgWrapper">
-                <img src="" alt="" class="resultImg" />
-              </div>
-              <h2>city1</h2>
-              <p></p>
-              <ul class="lQItems1">
-                <li class="lQItem">
-                  <h3 class="itemTitle">housing</h3>
-                  <span class="scoreNum"></span>
-                  <div class="scoreBar scoreBarFull">
-                    <div class="scoreBar scoreBarFill"></div>
-                  </div>
-                </li>
-                <li class="lQItem">
-                  <h3 class="itemTitle">tax</h3>
-                  <span class="scoreNum"></span>
-                  <div class="scoreBar scoreBarFull">
-                    <div class="scoreBar scoreBarFill"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="result result2">
-              <div class="imgWrapper">
-                <img src="" alt="" class="resultImg" />
-              </div>
-              <h2>city2</h2>
-              <p>description</p>
-              <ul class="lQItems2">
-                <li class="lQItem">
-                  <h3 class="itemTitle"></h3>
-                  <span class="scoreNum"></span>
-                  <div class="scoreBar scoreBarFull">
-                    <div class="scoreBar scoreBarFill"></div>
-                  </div>
-                </li>
-                <li class="lQItem">
-                  <h3 class="itemTitle"></h3>
-                  <span class="scoreNum"></span>
-                  <div class="scoreBar scoreBarFull">
-                    <div class="scoreBar scoreBarFill"></div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </section>
+<body>
+  <header>
+    <div class="wrapper">
+      <h1>app name</h1>
+      <p>description</p>
+    </div>
+  </header>
+  <main>
+    <div class="wrapper">
+      <section class="compare">
+        <form action="" class="setLocations">
+          <label for="location1" class="visuallyHidden">City1</label>
+          <input type="text" class="location" id="location1" placeholder="Name of a city (e.g. Toronto)" />
+          <label for="location2" class="visuallyHidden">City2</label>
+          <input type="text" class="location" id="location2" placeholder="Name of another city (e.g. London)" />
+          <input type="submit" value="compare!" id="submit" />
+        </form>
+
+        <section class="results">
+
         </section>
-        <!-- end of input section -->
-      </div>
-    </main>
-    <footer>
-      <p class="copyright">
-        copyright <a href="">dan</a> & <a href="">nora</a> 2019
-      </p>
-    </footer>
+      </section>
+      <!-- end of input section -->
+    </div>
+  </main>
+  <footer>
+    <p class="copyright">
+      copyright <a href="">dan</a> & <a href="">nora</a> 2019
+    </p>
+  </footer>
 
-    <!-- JavaScript file -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./scripts/scripts.js"></script>
-  </body>
+  <!-- JavaScript file -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./scripts/scripts.js"></script>
+</body>
+
 </html>

@@ -6,3 +6,8 @@
 @import 'partials/typography';
 @import 'partials/layout';
 @import 'partials/mediaQueries';
+
+img {
+	display: block;
+	width: 100%;
+}

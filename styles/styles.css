@@ -174,14 +174,19 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .result {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 50%;
           flex: 1 1 50%;
-  max-width: 48%;
+  max-width: 45%;
+}
+
+img {
+  display: block;
+  width: 100%;
 }
