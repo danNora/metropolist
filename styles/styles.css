@@ -185,7 +185,3 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
           flex: 1 1 50%;
   max-width: 48%;
 }
-
-* {
-  border: 1px red solid;
-}
