@@ -3,8 +3,11 @@
 @import 'partials/utils';
 
 // Style imports for general styles
-@import 'partials/typography';
+@import 'partials/global';
+@import 'partials/results';
+@import 'partials/mediaQueries';
 
-* {
-	border: 1px red solid;
+img {
+	display: block;
+	width: 100%;
 }
