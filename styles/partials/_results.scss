@@ -1,26 +1,7 @@
-.imageResults,
-.titleResults,
-.scoresResults {
-	width: 100%;
+.results {
 	display: flex;
-	// background-color: blue;
-	justify-content: center;
-	align-items: center;
 }
-
-h2,
-.imgWrapper,
-.lQItems {
-	width: 50%;
-}
-
-.lQItem {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-}
-
-.lQItems:first-child {
+.result1 {
 	border-right: 2px solid black;
 	.scoreBarFull {
 		display: flex;
@@ -37,13 +18,19 @@ h2,
 		// }
 	}
 }
-.lQItems:last-child {
+.result2 {
 	.lQItem {
 		flex-direction: row-reverse;
 	}
 	.itemTitle {
 		opacity: 0;
 	}
+}
+
+.lQItem {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
 .itemTitle {
