@@ -34,17 +34,20 @@ app.displayCityData = async function(cityName, cssClasses) {
 	const $result = $(`<div class="result ${cssClasses}">`);
 	const $scoresList = $('<ul class="lQItems">');
 
+	// Get city image url
+	const cityImageUrl = cityData['/images'].photos[0].image.mobile;
+
 	// Get data out of objects
 	const fullCityName = cityData['/']['full_name'];
-	const $cityNameHtml = $(`<h2>${fullCityName}</h2>`);
-
-	// Get city image url
-	const cityImage = cityData['/images'].photos[0].image.mobile;
+	const $cityNameHtml = $(`<h2>${fullCityName}</h2>`).css(
+		'background-image',
+		`linear-gradient(rgba(30, 30, 30, 0.2),rgba(30, 30, 30, 0.2)),url(${cityImageUrl})`
+	);
 
 	// Create div.imgWrapper>img
-	const $imageHtml = $(
-		`<div class="imgWrapper"><img src="${cityImage}" alt="Landscape of the city of ${cityName}"></div>`
-	);
+	// const $imageHtml = $(
+	// 	`<div class="imgWrapper"><img src="${cityImage}" alt="Landscape of the city of ${cityName}"></div>`
+	// );
 
 	const cityScoreArray = cityData['/scores']['categories'];
 
@@ -72,7 +75,7 @@ app.displayCityData = async function(cityName, cssClasses) {
 		$scoresList.append($score);
 	});
 
-	$result.append($cityNameHtml, $imageHtml, $scoresList);
+	$result.append($cityNameHtml, $scoresList);
 	$('.results').append($result);
 };
 

@@ -1,24 +1,38 @@
 .results {
 	display: flex;
+	width: 100%;
+	// background: blue;
+}
+.result {
+	width: 50%;
+}
+.itemTitle {
+	width: 100%;
+	text-align: center;
 }
 .result1 {
-	border-right: 2px solid black;
+	justify-self: flex-start;
 	.scoreBarFull {
 		display: flex;
 		justify-content: flex-end;
 		position: relative;
-		// ::after {
-		// 	content: '';
-		// 	display: block;
-		// 	width: 0.1rem;
-		// 	height: 100%;
-		// 	background-color: #fff;
-		// 	position: absolute;
-		// 	right: -0.05rem;
-		// }
+		::after {
+			content: '';
+			display: block;
+			width: 0.1rem;
+			height: 100%;
+			background-color: white;
+			position: absolute;
+			right: -0.05rem;
+		}
+	}
+	.itemTitle {
+		position: relative;
+		right: -50%;
 	}
 }
 .result2 {
+	justify-self: flex-end;
 	.lQItem {
 		flex-direction: row-reverse;
 	}
@@ -27,6 +41,13 @@
 	}
 }
 
+h2 {
+	padding-top: 1rem;
+	height: 10rem;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
 .lQItem {
 	display: flex;
 	flex-wrap: wrap;
@@ -35,6 +56,7 @@
 
 .itemTitle {
 	width: 100%;
+	// padding: 0 0.5rem;
 	flex: 1 1 100%;
 }
 
@@ -44,7 +66,7 @@
 
 .scoreBarFull {
 	background-color: #ddd;
-	flex: 1 1 70%;
+	flex: 1 1 60%;
 }
 
 .scoreNum {
