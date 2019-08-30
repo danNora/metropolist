@@ -24,14 +24,14 @@ app.getCityData = async cityName => {
 	return cityData;
 };
 
-app.displayCityData = async function(cityName, cssClasses) {
+app.displayCityData = async function(cityName, cssClass) {
 	const cityData = await app.getCityData(cityName);
 
 	//An overall score of the city given by Teleport
 	// const cityTeleportScore = cityData['/scores']['teleport_city_score'].toFixed(1);
 
 	// A div>ul to house all the <li>
-	const $result = $(`<div class="result ${cssClasses}">`);
+	// const $result = $(`<div class="result ${cssClasses}">`);
 	const $scoresList = $('<ul class="lQItems">');
 
 	// Get city image url
@@ -75,8 +75,8 @@ app.displayCityData = async function(cityName, cssClasses) {
 		$scoresList.append($score);
 	});
 
-	$result.append($cityNameHtml, $scoresList);
-	$('.results').append($result);
+	// $result.append($cityNameHtml, $scoresList);
+	$(cssClass).append($cityNameHtml, $scoresList);
 };
 
 app.cleanUserInput = function(inputValue) {
@@ -94,9 +94,9 @@ app.init = function() {
 		app.userCity1 = app.cleanUserInput($('#location1').val());
 		app.userCity2 = app.cleanUserInput($('#location2').val());
 
-		$('.results').empty();
-		app.displayCityData(app.userCity1, 'result1');
-		app.displayCityData(app.userCity2, 'result2');
+		$('.result1, .result2').empty();
+		app.displayCityData(app.userCity1, '.result1');
+		app.displayCityData(app.userCity2, '.result2');
 	});
 };
 
