@@ -21,11 +21,12 @@ app.getCityData = async cityName => {
 		);
 		cityData[app.apiDataPoints[i]] = cityDataPoint;
 	}
-
-	app.displayCityData(cityData);
+	return cityData;
 };
 
-app.displayCityData = function(cityData) {
+app.displayCityData = function(cityName, resultClass) {
+	const cityData = app.getCityData(cityName);
+
 	//An overall score of the city given by Teleport
 	// const cityTeleportScore = cityData['/scores']['teleport_city_score'].toFixed(1);
 
@@ -80,7 +81,7 @@ app.cleanUserInput = function(inputValue) {
 		.trim()
 		.toLowerCase()
 		.split(' ')
-		.join('-');
+		.join('-'); resultClass
 };
 
 app.init = function() {
@@ -91,8 +92,8 @@ app.init = function() {
 		app.userCity2 = app.cleanUserInput($('#location2').val());
 
 		$('.imageResults, .titleResults, .scoresResults').empty();
-		app.getCityData(app.userCity1);
-		app.getCityData(app.userCity2);
+		app.displayCityData(app.userCity1, ".result1");
+		app.displayCityData(app.userCity2, ".result2");
 	});
 };
 
