@@ -14,28 +14,30 @@
 <body>
   <header>
     <div class="wrapper">
-      <h1>app name</h1>
-      <p>description</p>
+      <h1>Urban Brawl</h1>
+      <p class="appDescription">Compare the quality of life between two major cities</p>
     </div>
   </header>
   <main>
-    <div class="wrapper">
-      <section class="compare">
+    <section class="compare">
+      <div class="wrapper">
         <form action="" class="setLocations">
+
           <label for="location1" class="visuallyHidden">City1</label>
-          <input type="text" class="location" id="location1" placeholder="Name of a city (e.g. Toronto)" />
+          <input type="text" class="location" id="location1" placeholder="Toronto" />
           <label for="location2" class="visuallyHidden">City2</label>
-          <input type="text" class="location" id="location2" placeholder="Name of another city (e.g. London)" />
+          <input type="text" class="location" id="location2" placeholder="London" />
+
           <input type="submit" value="compare!" id="submit" />
         </form>
+      </div>
 
-        <section class="results">
-          <div class="result result1"></div>
-          <div class="result result2"></div>
-        </section>
+      <section class="results">
+        <div class="result result1"></div>
+        <div class="result result2"></div>
       </section>
-      <!-- end of input section -->
-    </div>
+    </section>
+    <!-- end of input section -->
   </main>
   <footer>
     <p class="copyright">

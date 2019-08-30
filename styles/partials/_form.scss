@@ -1,0 +1,21 @@
+.setLocations {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+input[type='text'] {
+	width: 49%;
+	padding: 0.25rem;
+	border: none;
+	border-bottom: 0.1rem solid black;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+input[type='submit'] {
+	margin: 1rem auto 0;
+	padding: 0.5rem 1rem;
+	border: none;
+	background: black;
+	color: white;
+}
