@@ -8,9 +8,7 @@
 
 ## Todos:
 
-* Add error handling for names that don't return results (i.e. aren't considered urban areas or are mistyped)
-* Fix bug where changing 1 input value but keeping the other after an initial query leads to the items appearing out of order
-    * Possible solution: clear inputs after every query
+Todos have been moved to Trello 
 
 ## Stretch Goals
 
