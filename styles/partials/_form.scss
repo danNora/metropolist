@@ -1,21 +1,26 @@
 .setLocations {
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: column;
+	// flex-wrap: wrap;
+	justify-content: flex-start;
 }
 input[type='text'] {
-	width: 49%;
+	background: transparent;
+	margin: 0.25rem;
 	padding: 0.25rem;
 	border: none;
-	border-bottom: 0.1rem solid black;
+	border-bottom: 0.1rem solid white;
 	text-transform: uppercase;
 	text-align: center;
+	color: white;
+	text-shadow: 1px 1px grey;
+	box-shadow: 0px 1px grey;
 }
 
 input[type='submit'] {
 	margin: 1rem auto 0;
 	padding: 0.5rem 1rem;
 	border: none;
-	background: black;
+	background: $aColor;
 	color: white;
 }

@@ -175,7 +175,12 @@ html {
 }
 
 body {
-  background: #f2f2f4;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 8s ease infinite;
+          animation: gradientBG 8s ease infinite;
 }
 
 img {
@@ -183,12 +188,18 @@ img {
   width: 100%;
 }
 
-h2 {
-  font-size: 1.2rem;
+h1,
+h2,
+h3 {
+  font-family: 'Lexend Deca', sans-serif;
+  text-transform: uppercase;
 }
 
 h3 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 1rem auto 1px;
 }
 
 .wrapper {
@@ -202,43 +213,102 @@ ul {
   margin: 0;
 }
 
+.headerFlexContainer {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 header {
+  text-shadow: 2px 2px grey;
+  margin: 0;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
   text-align: center;
+}
+
+h1 {
+  letter-spacing: 0.5rem;
+}
+
+@-webkit-keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .setLocations {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 input[type='text'] {
-  width: 49%;
+  background: transparent;
+  margin: 0.25rem;
   padding: 0.25rem;
   border: none;
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.1rem solid white;
   text-transform: uppercase;
   text-align: center;
+  color: white;
+  text-shadow: 1px 1px grey;
+  -webkit-box-shadow: 0px 1px grey;
+          box-shadow: 0px 1px grey;
 }
 
 input[type='submit'] {
   margin: 1rem auto 0;
   padding: 0.5rem 1rem;
   border: none;
-  background: black;
+  background: #00a213;
   color: white;
 }
 
 .results {
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem #ddd;
+          box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem #ddd;
+  padding-bottom: 0.5rem 0.5rem 2rem;
 }
 
 .result {
@@ -295,11 +365,26 @@ input[type='submit'] {
 }
 
 h2 {
-  padding-top: 1rem;
+  max-width: 100%;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.cityNameFlexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 10rem;
   background-position: center 70%;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 0 5%;
 }
 
 .lQItem {
@@ -315,6 +400,7 @@ h2 {
 
 .itemTitle {
   width: 100%;
+  font-size: 0.9rem;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 100%;
           flex: 1 1 100%;
@@ -336,4 +422,10 @@ h2 {
       -ms-flex: 1 1 30%;
           flex: 1 1 30%;
   text-align: center;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.copyright {
+  margin: 0;
+  padding: 0.5rem;
 }

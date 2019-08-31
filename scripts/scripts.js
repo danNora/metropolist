@@ -39,9 +39,11 @@ app.displayCityData = async function(cityName, cssClass) {
 
 	// Get data out of objects
 	const fullCityName = cityData['/']['full_name'];
-	const $cityNameHtml = $(`<h2>${fullCityName}</h2>`).css(
+	const $cityNameHtml = $(
+		`<div class="cityNameFlexbox"><h2>${fullCityName}</h2></div>`
+	).css(
 		'background-image',
-		`linear-gradient(rgba(30, 30, 30, 0.2),rgba(30, 30, 30, 0.2)),url(${cityImageUrl})`
+		`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${cityImageUrl})`
 	);
 
 	// Create div.imgWrapper>img

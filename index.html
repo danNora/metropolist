@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat&display=swap" rel="stylesheet">
   <title>Document</title>
 
   <!-- CSS file -->
@@ -13,29 +14,28 @@
 
 <body>
   <header>
-    <div class="wrapper">
+    <div class="wrapper headerFlexContainer">
       <h1>Urban Brawl</h1>
       <p class="appDescription">Compare the quality of life between two major cities</p>
+      <form action="" class="setLocations">
+
+        <label for="location1" class="visuallyHidden">City1</label>
+        <input type="text" class="location" id="location1" placeholder="Toronto" />
+        <label for="location2" class="visuallyHidden">City2</label>
+        <input type="text" class="location" id="location2" placeholder="London" />
+
+        <input type="submit" value="compare!" id="submit" />
+      </form>
     </div>
   </header>
   <main>
-    <section class="compare">
-      <div class="wrapper">
-        <form action="" class="setLocations">
 
-          <label for="location1" class="visuallyHidden">City1</label>
-          <input type="text" class="location" id="location1" placeholder="Toronto" />
-          <label for="location2" class="visuallyHidden">City2</label>
-          <input type="text" class="location" id="location2" placeholder="London" />
 
-          <input type="submit" value="compare!" id="submit" />
-        </form>
-      </div>
 
-      <section class="results">
-        <div class="result result1"></div>
-        <div class="result result2"></div>
-      </section>
+    <section class="results">
+      <div class="result result1"></div>
+      <div class="result result2"></div>
+
     </section>
     <!-- end of input section -->
   </main>

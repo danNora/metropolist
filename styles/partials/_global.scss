@@ -3,19 +3,30 @@ html {
 }
 
 body {
-	background: $pColor;
+	// background: $pColor;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradientBG 8s ease infinite;
 }
 
 img {
 	display: block;
 	width: 100%;
 }
-
-h2 {
-	font-size: 1.2rem;
-}
+h1,
+h2,
 h3 {
-	font-size: 0.8rem;
+	font-family: 'Lexend Deca', sans-serif;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 0.9rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	margin: 1rem auto 1px;
 }
 
 // .compare {
