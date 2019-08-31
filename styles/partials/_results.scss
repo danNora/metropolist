@@ -1,18 +1,96 @@
+// main {
+// 	box-shadow: 10px -20px 0 grey;
+// 	padding-top: 20px;
+// 	background-color: white;
+// }
+
 .results {
+	background-color: #fff;
 	display: flex;
-	justify-content: space-evenly;
+	width: 90%;
+	margin: 0 auto;
+	box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem #ddd;
+	padding-bottom: 0.5rem 0.5rem 2rem;
+	// 	background-color: white;
+}
+.result {
+	width: 50%;
+}
+.itemTitle {
+	width: 100%;
+	text-align: center;
+}
+.result1 {
+	justify-self: flex-start;
+	.scoreBarFull {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		::after {
+			content: '';
+			display: block;
+			width: 0.1rem;
+			height: 100%;
+			background-color: white;
+			position: absolute;
+			right: -0.05rem;
+		}
+	}
+	.itemTitle {
+		position: relative;
+		right: -50%;
+	}
+}
+.result2 {
+	justify-self: flex-end;
+	.lQItem {
+		flex-direction: row-reverse;
+	}
+	.itemTitle {
+		opacity: 0;
+		// position: relative;
+		// left: -50%;
+	}
 }
 
-.result {
-	flex: 1 1 50%;
-	max-width: 45%;
+h2 {
+	max-width: 100%;
+	color: white;
+	font-size: 1.1rem;
+}
+.cityNameFlexbox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10rem;
+	background-position: center 70%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 0 5%;
+}
+.lQItem {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.itemTitle {
+	width: 100%;
+	font-size: 0.9rem;
+	flex: 1 1 100%;
 }
 
 .scoreBar {
 	height: 0.5rem;
-	border-radius: 4rem;
 }
 
 .scoreBarFull {
 	background-color: #ddd;
+	flex: 1 1 60%;
+}
+
+.scoreNum {
+	flex: 1 1 30%;
+	text-align: center;
+	font-family: 'Lexend Deca', sans-serif;
 }

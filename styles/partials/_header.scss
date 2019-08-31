@@ -1,0 +1,32 @@
+.headerFlexContainer {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	// align-items: center;
+}
+
+header {
+	text-shadow: 2px 2px grey;
+	margin: 0;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+
+	text-align: center;
+}
+
+h1 {
+	letter-spacing: 0.5rem;
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

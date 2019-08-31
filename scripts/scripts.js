@@ -21,54 +21,64 @@ app.getCityData = async cityName => {
 		);
 		cityData[app.apiDataPoints[i]] = cityDataPoint;
 	}
-
-	app.displayCityData(cityData);
+	return cityData;
 };
 
-app.displayCityData = function(cityData) {
+app.displayCityData = async function(cityName, cssClass) {
+	const cityData = await app.getCityData(cityName);
+
 	//An overall score of the city given by Teleport
 	// const cityTeleportScore = cityData['/scores']['teleport_city_score'].toFixed(1);
 
 	// A div>ul to house all the <li>
-	const $result = $("<div class='result'>");
+	// const $result = $(`<div class="result ${cssClasses}">`);
 	const $scoresList = $('<ul class="lQItems">');
 
-	// Get data out of objects
-	const cityName = cityData['/']['full_name'];
-
 	// Get city image url
-	const cityImage = cityData['/images'].photos[0].image.mobile;
+	const cityImageUrl = cityData['/images'].photos[0].image.mobile;
 
-	// Create div.imgWrapper>img
-	const $imageHtml = $(
-		`<div class="imgWrapper"><img src="${cityImage}" alt="Landscape of the city of ${cityName}"></div>`
+	// Get data out of objects
+	const fullCityName = cityData['/']['full_name'];
+	const $cityNameHtml = $(
+		`<div class="cityNameFlexbox"><h2>${fullCityName}</h2></div>`
+	).css(
+		'background-image',
+		`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${cityImageUrl})`
 	);
 
-	const $cityTitle = $(`<h2>${cityName}</h2>`);
-	// const $cityDescription = $('<p>city description</p>');
+	// Create div.imgWrapper>img
+	// const $imageHtml = $(
+	// 	`<div class="imgWrapper"><img src="${cityImage}" alt="Landscape of the city of ${cityName}"></div>`
+	// );
 
 	const cityScoreArray = cityData['/scores']['categories'];
 
 	cityScoreArray.forEach(function(score) {
+		//creating li.lQItem
 		const $score = $('<li class="lQItem">');
+
 		const $itemTitle = $('<h3 class="itemTitle">').text(score.name);
-		const $scoreNum = $('<span> class="scoreNum">').text(
+
+		const $scoreNum = $('<span class="scoreNum">').text(
 			score['score_out_of_10'] ? score['score_out_of_10'].toFixed(1) : 'N/A'
 		);
-
+		//score bar
 		const $scoreBarFull = $('<div class="scoreBar scoreBarFull">');
 		const $scoreBarFill = $('<div class="scoreBar scoreBarFill">').css({
 			width: score['score_out_of_10'] * 10 + '%',
 			background: score['color']
 		});
-
 		$scoreBarFull.html($scoreBarFill);
+
+		//appending itemTitle, score number, score bar to an li.lQItem
 		$score.append($itemTitle, $scoreNum, $scoreBarFull);
+
+		//appending li.lQItem to ul.lQItems
 		$scoresList.append($score);
 	});
 
-	$result.append($imageHtml, $cityTitle, $scoresList);
-	$('.results').append($result);
+	// $result.append($cityNameHtml, $scoresList);
+	$(cssClass).append($cityNameHtml, $scoresList);
 };
 
 app.cleanUserInput = function(inputValue) {
@@ -80,15 +90,15 @@ app.cleanUserInput = function(inputValue) {
 };
 
 app.init = function() {
-	$('#submit').on('click', async function(e) {
+	$('#submit').on('click', function(e) {
 		e.preventDefault();
 		//todo: function
 		app.userCity1 = app.cleanUserInput($('#location1').val());
 		app.userCity2 = app.cleanUserInput($('#location2').val());
 
-		$('.results').empty();
-		app.getCityData(app.userCity1);
-		app.getCityData(app.userCity2);
+		$('.result1, .result2').empty();
+		app.displayCityData(app.userCity1, '.result1');
+		app.displayCityData(app.userCity2, '.result2');
 	});
 };
 
