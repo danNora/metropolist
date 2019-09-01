@@ -15,7 +15,7 @@ input[type='text'] {
 input[type='text']:hover,
 input[type='text']:focus {
 	box-shadow: 0 0 0 0.1rem $pColor;
-	border: none;
+	// border: none;
 	transition: all 0.2s;
 }
 

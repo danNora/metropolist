@@ -371,7 +371,6 @@ input[type='text']:hover,
 input[type='text']:focus {
   -webkit-box-shadow: 0 0 0 0.1rem ivory;
           box-shadow: 0 0 0 0.1rem ivory;
-  border: none;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
