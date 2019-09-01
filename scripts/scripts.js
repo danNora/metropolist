@@ -1,7 +1,9 @@
 const app = {};
+//Instead of taking query parameters, this API requires different endpoints for different queries.
+//The endpoints here fetch city name, city image, and city scores respectively.
 app.apiDataPoints = ['/', '/images', '/scores'];
 
-//a method to return ajax call promises
+//a method to return an ajax call promise for each query
 app.getCityPromise = function(cityName, dataPoint) {
 	const endpoint = `https://api.teleport.org/api/urban_areas/slug:${cityName}${dataPoint}`;
 	return $.ajax({
@@ -21,10 +23,12 @@ app.getAllCityData = cityNames => {
 		}
 	});
 
-	$.when(...cityPromises)
-		.then((...results) => {
-			const cityResults = results.map(result => result[0]);
-			// console.log('dataResults', dataResults);
+	Promise.all(cityPromises)
+		.then(results => {
+			$('.resultsHidden').toggleClass('resultsHidden results');
+			$('.result1, .result2').empty();
+			// const cityResults = results.map(result => result[0]);
+			const cityResults = results;
 
 			const cityObjects = [];
 			for (let i = 0; i < cityResults.length; i += app.apiDataPoints.length) {
@@ -39,8 +43,9 @@ app.getAllCityData = cityNames => {
 
 			app.displayAllCityData(cityObjects);
 		})
-		.fail((...errors) => {
+		.catch(errors => {
 			console.log(errors);
+			$('main').append(`<p>Please try a different city</p>`);
 		});
 };
 
@@ -92,8 +97,14 @@ app.displayAllCityData = function(cities) {
 			$scoresList.append($score);
 		});
 
-		// $result.append($cityNameHtml, $scoresList);
-		$(`.result${index + 1}`).append($cityNameHtml, $scoresList);
+		if (cities.length === 2) {
+			$(`.result${index + 1}`).append($cityNameHtml, $scoresList);
+		} else {
+			$('.result1, .result2, .restart').remove();
+			const $result = $('<div class="result">');
+			$result.append($cityNameHtml, $scoresList);
+			$('.results').append($result);
+		}
 	});
 };
 
@@ -108,7 +119,7 @@ app.cleanUserInput = function(inputValue) {
 app.restart = function() {
 	$('.restart').on('click', function() {
 		app.smoothScroll('header');
-
+		$('input[type=text]').val('');
 		setTimeout(function() {
 			$('.results').toggleClass('results resultsHidden');
 		}, 1500);
@@ -118,12 +129,10 @@ app.restart = function() {
 app.init = function() {
 	$('#submit').on('click', function(e) {
 		e.preventDefault();
-		//todo: function
+
 		app.userCity1 = app.cleanUserInput($('#location1').val());
 		app.userCity2 = app.cleanUserInput($('#location2').val());
 
-		$('.resultsHidden').toggleClass('results resultsHidden');
-		$('.result1, .result2').empty();
 		app.getAllCityData([app.userCity1, app.userCity2]);
 		// app.displayCityData(app.userCity2, '.result2');
 
@@ -142,8 +151,6 @@ app.smoothScroll = function(elementId) {
 			600
 		);
 };
-
-app.shrinkCityHeader = function() {};
 
 //document ready
 $(document).ready(function() {
