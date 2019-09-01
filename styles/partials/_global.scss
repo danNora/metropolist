@@ -43,6 +43,27 @@ h3 {
 	margin: 0 auto;
 }
 
+
+input[type=submit] {
+	margin: 1rem auto 0;
+	position: relative;
+	background-color: $bColor;
+	border: none;
+	padding: 20px;
+	width: 200px;
+	text-align: center;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
+	text-decoration: none;
+	overflow: hidden;
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+  background: $pColor;
+  box-shadow:$bShadow;
+  color:#000;
+}
+
 ul {
 	list-style: none;
 	padding: 0;

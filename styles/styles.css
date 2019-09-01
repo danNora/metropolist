@@ -170,7 +170,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 html {
   font-size: 125%;
 }
@@ -226,6 +225,28 @@ h3 {
   margin: 0 auto;
 }
 
+input[type=submit] {
+  margin: 1rem auto 0;
+  position: relative;
+  background-color: #36CC24;
+  border: none;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+  background: ivory;
+  -webkit-box-shadow: 0 0 0.25rem 0.1rem ivory;
+          box-shadow: 0 0 0.25rem 0.1rem ivory;
+  color: #000;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -262,8 +283,8 @@ h1 {
 .octoSvg {
   width: 80px;
   height: 80px;
-  fill: #ffffffdd;
-  color: #151513dd;
+  fill: ivory;
+  color: #24292E;
   position: absolute;
   top: 0;
   border: 0;
@@ -273,8 +294,8 @@ h1 {
 }
 
 .githubCorner:hover .octoSvg, .githubCorner:focus .octoSvg {
-  color: #ffffff;
-  fill: #151513;
+  color: ivory;
+  fill: #24292E;
 }
 
 .githubCorner:hover .octoArm, .githubCorner:focus .octoArm {
@@ -355,13 +376,8 @@ input[type='submit'] {
   margin: 1.5rem auto 0;
   padding: 0.5rem 1rem;
   border: none;
-  background: #00a213;
-  color: white;
-}
-
-input[type='submit']:hover, input[type='submit']:focus {
-  -webkit-box-shadow: 0 0 0 0.1rem ivory;
-          box-shadow: 0 0 0 0.1rem ivory;
+  background: #36CC24;
+  color: ivory;
 }
 
 @media (min-width: 480px) {
@@ -515,7 +531,7 @@ h2 {
   margin: 1rem auto 0;
   padding: 0.5rem 1rem;
   border: none;
-  background: #00a213;
+  background: #36CC24;
   color: ivory;
 }
 
@@ -528,10 +544,19 @@ h2 {
   }
 }
 
-.copyright {
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: calc(15vh - 1.5rem);
   margin: 0.75rem 0;
-  padding: 0;
+}
+
+.copyright {
+  margin: 0;
   color: ivory;
   font-size: 0.9rem;
 }
@@ -542,7 +567,7 @@ h2 {
 }
 
 .copyright .fa-github:hover, .copyright .fa-github:focus {
-  color: #151515;
+  color: #24292E;
 }
 
 .copyright .fa-twitter:hover, .copyright .fa-twitter:focus {
@@ -550,8 +575,8 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  .copyright {
+  footer {
     height: calc(15vh - 3rem);
-    padding: 1.5rem 0;
+    margin: 1.5rem 0;
   }
 }

@@ -3,8 +3,14 @@
 $pColor: ivory;
 //shadow color:
 $sColor: silver;
-$black: #151515;
-$aColor: #00a213;
+//Github color:
+$gColor: #24292E;
+//button color:
+$bColor: #36CC24;
 //Twitter color:
 $tColor:#1DA1F2;
-$gradient: linear-gradient(-45deg, #48e040, #ff8c00, #ff003c,#6923cb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+//body background gradient:
+$gradient: linear-gradient(-45deg, #48e040, #ff8c00, #ff003c,#6923cb); 
+
+//box shadow:
+$bShadow:0 0 0.25rem 0.1rem $pColor;

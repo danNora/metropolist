@@ -24,8 +24,8 @@ h1 {
 .octoSvg{
 	width: 80px;
 	height: 80px;
-	fill:#ffffffdd;
-	color:#151513dd;
+	fill:$pColor;
+	color:$gColor;
 	position: absolute; 
 	top: 0; 
 	border: 0; 
@@ -34,8 +34,8 @@ h1 {
 }
 
 .githubCorner:hover .octoSvg, .githubCorner:focus .octoSvg {
-	color:#ffffff;
-	fill:#151513;
+	color:$pColor;
+	fill:$gColor;
 }
 .githubCorner:hover .octoArm, .githubCorner:focus .octoArm {
 	 animation: octocatWave 560ms ease-in-out infinite;
