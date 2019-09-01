@@ -7,8 +7,8 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	text-align: center;
 	background: $gradient;
-	background-size: 250% 250%;
-	animation: gradientBG 5s ease infinite alternate;
+	background-size: 350% 350%;
+	animation: gradientBG 8s linear infinite alternate;
 }
 @keyframes gradientBG {
 	0% {

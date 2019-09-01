@@ -1,5 +1,5 @@
 .headerFlexContainer {
-	height: 100vh;
+	height: 85vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -7,7 +7,7 @@
 }
 
 header {
-	text-shadow: 2px 2px grey;
+	text-shadow: 1px 1px $sColor;
 	margin: 0;
 	width: 100%;
 	font-family: 'Montserrat', sans-serif;
@@ -18,4 +18,53 @@ header {
 
 h1 {
 	letter-spacing: 0.5rem;
+}
+
+
+.octoSvg{
+	width: 80px;
+	height: 80px;
+	fill:#ffffffdd;
+	color:#151513dd;
+	position: absolute; 
+	top: 0; 
+	border: 0; 
+	left: 0; 
+	transform: scale(-1, 1);
+}
+
+.githubCorner:hover .octoSvg, .githubCorner:focus .octoSvg {
+	color:#ffffff;
+	fill:#151513;
+}
+.githubCorner:hover .octoArm, .githubCorner:focus .octoArm {
+	 animation: octocatWave 560ms ease-in-out infinite;
+	 
+}
+    
+@keyframes octocatWave {
+0%,
+100% {
+	transform: rotate(0);
+}
+
+20%,
+60% {
+	transform: rotate(-25deg);
+}
+
+40%,
+80% {
+	transform: rotate(10deg);
+}
+}
+
+@media (max-width:500px) {
+	.githubCorner:hover .octoArm {
+		animation: none;
+	}
+
+	.githubCorner .octoArm {
+		animation: octocatWave 560ms ease-in-out infinite;
+	}
 }
