@@ -96,11 +96,23 @@ app.init = function() {
 		app.userCity1 = app.cleanUserInput($('#location1').val());
 		app.userCity2 = app.cleanUserInput($('#location2').val());
 
+		$(".resultsHidden").toggleClass("results resultsHidden");
 		$('.result1, .result2').empty();
 		app.displayCityData(app.userCity1, '.result1');
 		app.displayCityData(app.userCity2, '.result2');
+
+		app.smoothScroll("#results");
 	});
 };
+
+app.smoothScroll = function(elementId) {
+	$('html, body').delay(500).animate({
+		scrollTop: $(elementId).offset().top
+	}, 600);
+}
+
+app.shrinkCityHeader = function() {
+}
 
 //document ready
 $(document).ready(function() {

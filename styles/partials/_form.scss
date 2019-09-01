@@ -1,10 +1,5 @@
-.setLocations {
-	display: flex;
-	flex-direction: column;
-	// flex-wrap: wrap;
-	justify-content: flex-start;
-}
 input[type='text'] {
+	width: 100%;
 	background: transparent;
 	margin: 0.25rem;
 	padding: 0.25rem;
@@ -18,9 +13,23 @@ input[type='text'] {
 }
 
 input[type='submit'] {
-	margin: 1rem auto 0;
+	display: block;
+	margin: 1.5rem auto 0;
 	padding: 0.5rem 1rem;
 	border: none;
 	background: $aColor;
 	color: white;
+}
+
+@media (min-width: 480px) {
+	.setLocations {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	input[type='text'] {
+		width: 45%;
+		max-width: 20rem;
+	}
 }

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>City Comparison App</title>
 
   <!-- CSS file -->
   <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
@@ -15,27 +14,23 @@
 <body>
   <header>
     <div class="wrapper headerFlexContainer">
-      <h1>Urban Brawl</h1>
+      <h1>City App</h1>
       <p class="appDescription">Compare the quality of life between two major cities</p>
+      
       <form action="" class="setLocations">
-
         <label for="location1" class="visuallyHidden">City1</label>
-        <input type="text" class="location" id="location1" placeholder="Toronto" />
+        <input type="text" class="location" id="location1" placeholder="City1" value='toronto' />
         <label for="location2" class="visuallyHidden">City2</label>
-        <input type="text" class="location" id="location2" placeholder="London" />
-
+        <input type="text" class="location" id="location2" placeholder="City2"value='london' />
         <input type="submit" value="compare!" id="submit" />
       </form>
     </div>
   </header>
   <main>
-
-
-
-    <section class="results">
+    <section class="resultsHidden" id="results">
       <div class="result result1"></div>
       <div class="result result2"></div>
-
+      <button class="restart">Restart</button>
     </section>
     <!-- end of input section -->
   </main>
