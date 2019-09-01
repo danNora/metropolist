@@ -530,9 +530,16 @@ h2 {
 .restart {
   margin: 1rem auto 0;
   padding: 0.5rem 1rem;
-  border: none;
+  border: 2px solid #36CC24;
   background: #36CC24;
   color: ivory;
+}
+
+.restart:hover, .restart:focus {
+  background: ivory;
+  color: #36CC24;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 @media (min-width: 768px) {

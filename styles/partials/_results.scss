@@ -105,10 +105,17 @@ h2 {
 .restart {
 	margin: 1rem auto 0;
 	padding: 0.5rem 1rem;
-	border: none;
+	border: 2px solid $bColor;
 	background: $bColor;
 	color: $pColor;
 }
+
+.restart:hover, .restart:focus {
+	background: $pColor;
+	color: $bColor;
+	transition: all 0.2s;
+}
+
 
 @media (min-width: 768px) {
 	.cityNameFlexbox {
