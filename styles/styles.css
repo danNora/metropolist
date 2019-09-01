@@ -172,10 +172,11 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 125%;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   background: linear-gradient(-45deg, #48e040, #ff8c00, #ff003c, #6923cb);
   background-size: 350% 350%;
@@ -225,10 +226,10 @@ h3 {
   margin: 0 auto;
 }
 
-input[type=submit] {
+input[type='submit'] {
   margin: 1rem auto 0;
   position: relative;
-  background-color: #36CC24;
+  background-color: #36cc24;
   border: none;
   padding: 20px;
   width: 200px;
@@ -240,7 +241,8 @@ input[type=submit] {
   overflow: hidden;
 }
 
-input[type=submit]:hover, input[type=submit]:focus {
+input[type='submit']:hover,
+input[type='submit']:focus {
   background: ivory;
   -webkit-box-shadow: 0 0 0.25rem 0.1rem ivory;
           box-shadow: 0 0 0.25rem 0.1rem ivory;
@@ -284,7 +286,7 @@ h1 {
   width: 80px;
   height: 80px;
   fill: ivory;
-  color: #24292E;
+  color: #24292e;
   position: absolute;
   top: 0;
   border: 0;
@@ -295,7 +297,7 @@ h1 {
 
 .githubCorner:hover .octoSvg, .githubCorner:focus .octoSvg {
   color: ivory;
-  fill: #24292E;
+  fill: #24292e;
 }
 
 .githubCorner:hover .octoArm, .githubCorner:focus .octoArm {
@@ -365,10 +367,12 @@ input[type='text'] {
           box-shadow: 0px 0.05rem grey;
 }
 
-input[type='text']:hover, input[type='text']:focus {
+input[type='text']:hover,
+input[type='text']:focus {
   -webkit-box-shadow: 0 0 0 0.1rem ivory;
           box-shadow: 0 0 0 0.1rem ivory;
-  border: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 input[type='submit'] {
@@ -376,7 +380,7 @@ input[type='submit'] {
   margin: 1.5rem auto 0;
   padding: 0.5rem 1rem;
   border: none;
-  background: #36CC24;
+  background: #36cc24;
   color: ivory;
 }
 
@@ -530,14 +534,15 @@ h2 {
 .restart {
   margin: 1rem auto 0;
   padding: 0.5rem 1rem;
-  border: 2px solid #36CC24;
-  background: #36CC24;
+  border: 2px solid #36cc24;
+  background: #36cc24;
   color: ivory;
 }
 
-.restart:hover, .restart:focus {
+.restart:hover,
+.restart:focus {
   background: ivory;
-  color: #36CC24;
+  color: #36cc24;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
@@ -574,11 +579,11 @@ footer {
 }
 
 .copyright .fa-github:hover, .copyright .fa-github:focus {
-  color: #24292E;
+  color: #24292e;
 }
 
 .copyright .fa-twitter:hover, .copyright .fa-twitter:focus {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 @media (min-width: 768px) {
