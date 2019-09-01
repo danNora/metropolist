@@ -1,5 +1,6 @@
 html {
 	font-size: 125%;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +19,6 @@ body {
 		background-position: 100% 50%;
 	}
 }
-
 
 img {
 	display: block;
@@ -43,8 +43,7 @@ h3 {
 	margin: 0 auto;
 }
 
-
-input[type=submit] {
+input[type='submit'] {
 	margin: 1rem auto 0;
 	position: relative;
 	background-color: $bColor;
@@ -58,10 +57,11 @@ input[type=submit] {
 	overflow: hidden;
 }
 
-input[type=submit]:hover, input[type=submit]:focus {
-  background: $pColor;
-  box-shadow:$bShadow;
-  color:#000;
+input[type='submit']:hover,
+input[type='submit']:focus {
+	background: $pColor;
+	box-shadow: $bShadow;
+	color: #000;
 }
 
 ul {

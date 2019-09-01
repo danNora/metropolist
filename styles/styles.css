@@ -172,6 +172,7 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 125%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -225,7 +226,7 @@ h3 {
   margin: 0 auto;
 }
 
-input[type=submit] {
+input[type='submit'] {
   margin: 1rem auto 0;
   position: relative;
   background-color: #36CC24;
@@ -240,7 +241,8 @@ input[type=submit] {
   overflow: hidden;
 }
 
-input[type=submit]:hover, input[type=submit]:focus {
+input[type='submit']:hover,
+input[type='submit']:focus {
   background: ivory;
   -webkit-box-shadow: 0 0 0.25rem 0.1rem ivory;
           box-shadow: 0 0 0.25rem 0.1rem ivory;
@@ -365,10 +367,13 @@ input[type='text'] {
           box-shadow: 0px 0.05rem grey;
 }
 
-input[type='text']:hover, input[type='text']:focus {
+input[type='text']:hover,
+input[type='text']:focus {
   -webkit-box-shadow: 0 0 0 0.1rem ivory;
           box-shadow: 0 0 0 0.1rem ivory;
   border: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 input[type='submit'] {
