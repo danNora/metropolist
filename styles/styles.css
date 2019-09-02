@@ -595,21 +595,24 @@ input[type='submit'] {
 }
 
 .winner {
-  color: #3bff3b;
+  color: #8fff89;
+  text-shadow: 0.05rem 0.05rem 0.05rem #24292e;
 }
 
 .loser {
-  color: #ff4949;
+  color: #ffacac;
+  text-shadow: 0.05rem 0.05rem 0.05rem #24292e;
 }
 
 .tie {
   color: #ffff41;
+  text-shadow: 0.05rem 0.05rem 0.05rem #24292e;
 }
 
 .restart {
   margin: 1rem auto 0;
   padding: 0.5rem 1rem;
-  border: 2px solid #36cc24;
+  border: 0.1rem solid #36cc24;
   background: #36cc24;
   color: ivory;
   text-transform: uppercase;

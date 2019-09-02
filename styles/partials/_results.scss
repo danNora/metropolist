@@ -111,21 +111,24 @@
 }
 
 .winner {
-	color: rgb(59, 255, 59);
+	color: #8fff89;
+	text-shadow: 0.05rem 0.05rem 0.05rem $gColor;
 }
 
 .loser {
-	color: rgb(255, 73, 73);
+	color: #ffacac;
+	text-shadow: 0.05rem 0.05rem 0.05rem $gColor;
 }
 
 .tie {
-	color: rgb(255, 255, 65);
+	color: #ffff41;
+	text-shadow: 0.05rem 0.05rem 0.05rem $gColor;
 }
 
 .restart {
 	margin: 1rem auto 0;
 	padding: 0.5rem 1rem;
-	border: 2px solid $bColor;
+	border: 0.1rem solid $bColor;
 	background: $bColor;
 	color: $pColor;
 	text-transform: uppercase;
