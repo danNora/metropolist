@@ -352,27 +352,9 @@ h1 {
   }
 }
 
-input[type='text'] {
-  width: calc(100% - 0.5rem);
-  background: transparent;
-  margin: 0.25rem;
-  padding: 0.25rem;
-  border: none;
-  border-bottom: 0.1rem solid ivory;
-  text-transform: uppercase;
-  text-align: center;
-  color: ivory;
-  text-shadow: 0.05rem 0.05rem grey;
-  -webkit-box-shadow: 0px 0.05rem grey;
-          box-shadow: 0px 0.05rem grey;
-}
-
-input[type='text']:hover,
-input[type='text']:focus {
-  -webkit-box-shadow: 0 0 0 0.1rem ivory;
-          box-shadow: 0 0 0 0.1rem ivory;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+option {
+  color: black;
+  width: 5rem;
 }
 
 input[type='submit'] {

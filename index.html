@@ -33,10 +33,18 @@
       <p class="appDescription">Compare the quality of life between two major cities</p>
 
       <form action="" class="setLocations">
+        <select name="location1" id="location1" class="location1">
+          <option value="">Select a city...</option>
+          <!-- Options go here -->
+        </select>
+        <select name="location2" id="location2" class="location2">
+          <option value="">Select a city...</option>
+          <!-- Options go here -->
+        </select>
         <label for="location1" class="visuallyHidden">City1</label>
-        <input type="text" class="location" id="location1" placeholder="City1" />
-        <label for="location2" class="visuallyHidden">City2</label>
-        <input type="text" class="location" id="location2" placeholder="City2" />
+        <!-- <input type="text" class="location" id="location1" placeholder="City1" /> -->
+        <!-- <label for="location2" class="visuallyHidden">City2</label> -->
+        <!-- <input type="text" class="location" id="location2" placeholder="City2" /> -->
         <input type="submit" value="compare!" id="submit" class="button" />
       </form>
     </div>
