@@ -91,10 +91,11 @@ app.displayAllCityData = function(cityObjects) {
 			);
 			//score bar
 			const $scoreBarFull = $('<div class="scoreBar scoreBarFull">');
-			const $scoreBarFill = $('<div class="scoreBar scoreBarFill">').css({
-				width: score['score_out_of_10'] * 10 + '%',
-				background: score['color']
-			});
+			const $scoreBarFill = $('<div class="scoreBar scoreBarFill">')
+				.css('background', score['color'])
+				.animate({
+					width: score['score_out_of_10'] * 10 + '%',
+				}, 1000);
 			$scoreBarFull.html($scoreBarFill);
 
 			//appending itemTitle, score number, score bar to an li.lQItem
