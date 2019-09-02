@@ -114,7 +114,39 @@ app.displayAllCityData = function(cityObjects) {
 
 	// autoscrolls to section.results
 	app.smoothScroll('.results');
+	app.displayTotal();
 };
+
+app.calculateTotal = function(resultClass) {
+	let scoreTotal = 0;
+	$(`${resultClass} .scoreNum`).each(function() {
+		const score = parseInt($(this).text());
+		if (!isNaN(score)) {
+			scoreTotal += score;
+		}
+	});
+
+	return scoreTotal;
+}
+
+app.displayTotal = function() {
+	const total1 = app.calculateTotal('.result1');
+	const total2 = app.calculateTotal('.result2');
+	
+	$('.result1 .cityNameFlexbox').append(`<p class="scoreTotal">Total Score: <span class="scoreNum">${total1}</span></p>`);
+	$('.result2 .cityNameFlexbox').append(`<p class="scoreTotal">Total Score: <span class="scoreNum">${total2}</span></p>`);
+	
+	if (total1 > total2) {
+		$('.result1 .scoreTotal .scoreNum').addClass('winner');
+		$('.result2 .scoreTotal .scoreNum').addClass('loser');
+	} else if (total2 > total1) {
+		$('.result2 .scoreTotal .scoreNum').addClass('winner');
+		$('.result1 .scoreTotal .scoreNum').addClass('loser');
+	} else {
+		$('.result1 .scoreTotal .scoreNum, .result2 .scoreTotal .scoreNum').addClass('tie');
+	}
+	
+}
 
 // method to start another search
 app.restart = function() {

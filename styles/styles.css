@@ -515,31 +515,40 @@ input[type='submit'] {
   opacity: 0;
 }
 
+.cityNameFlexbox {
+  color: ivory;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10rem;
+  background-position: center 70%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 12% 5%;
+}
+
 .cityName {
   max-width: 100%;
-  color: white;
   font-size: 1rem;
+  margin: 0;
 }
 
 .longName {
   font-size: 0.7rem;
 }
 
-.cityNameFlexbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 10rem;
-  background-position: center 70%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  padding: 0 5%;
+.scoreTotal {
+  margin: 0;
 }
 
 .lQItems {
@@ -582,6 +591,19 @@ input[type='submit'] {
           flex: 1 1 30%;
   text-align: center;
   font-family: 'Lexend Deca', sans-serif;
+  text-transform: uppercase;
+}
+
+.winner {
+  color: #3bff3b;
+}
+
+.loser {
+  color: #ff4949;
+}
+
+.tie {
+  color: #ffff41;
 }
 
 .restart {
@@ -602,6 +624,9 @@ input[type='submit'] {
 }
 
 @media (min-width: 768px) {
+  .cityName {
+    font-size: 1.5rem;
+  }
   .longName {
     font-size: 1.1rem;
   }
