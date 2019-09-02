@@ -1,16 +1,16 @@
-.headerFlexContainer {
-	height: 85vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
 header {
 	margin: 0;
 	width: 100%;
 	font-family: $mFont;
 	color: $pColor;
 	text-align: center;
+}
+
+.headerFlexContainer {
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 h1 {
@@ -28,9 +28,10 @@ h1 {
 	margin: 1rem 0 0;
 }
 
+// GitHub corner link
 .octoSvg {
-	width: 80px;
-	height: 80px;
+	width: 2.5rem;
+	height: 2.5rem;
 	fill: $pColor;
 	color: $gColor;
 	position: absolute;
@@ -71,22 +72,32 @@ h1 {
 	h1 {
 		margin: 2rem 0;
 	}
+
+	.lineBreak {
+		display: none;
+	}
+
+	.octoSvg {
+		width: 4rem;
+		height: 4rem;
+	}
+
 	.githubCorner .octoArm {
 		animation: none;
 	}
+
 	.githubCorner:hover .octoArm,
 	.githubCorner:focus .octoArm {
 		animation: octocatWave 560ms ease-in-out infinite;
 	}
-	.lineBreak {
-		display: none;
-	}
 }
+
 @media (min-width: 642px) {
 	h1 {
 		font-size: 2.5rem;
 	}
 }
+
 @media (min-width: 960px) {
 	h1 {
 		font-size: 3rem;

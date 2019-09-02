@@ -13,18 +13,21 @@ footer {
 		text-decoration: none;
 		color: $pColor;
 	}
-	.github:hover,
-	.github:focus {
-		color: $gColor;
-	}
-	.twitter:hover,
-	.twitter:focus {
-		color: $tColor;
-	}
-	.portfolio:hover,
-	.portfolio:focus {
-		color: $bColor;
-	}
+}
+
+.github:hover,
+.github:focus {
+	color: $gColor;
+}
+
+.twitter:hover,
+.twitter:focus {
+	color: $tColor;
+}
+
+.portfolio:hover,
+.portfolio:focus {
+	color: $bColor;
 }
 
 @media (min-width: 480px) {

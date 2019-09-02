@@ -12,8 +12,8 @@ select {
 	background-size: 0.6rem;
 	box-shadow: rgba(0, 0, 0, 0.15) 0 1px 0;
 	color: $gColor;
+	/* dark arrow */
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+DQo8cG9seWdvbiBvcGFjaXR5PSIwLjciIHBvaW50cz0iMCw0IDE2LDQgOCwxMiIvPg0KPC9zdmc+DQo=');
-	/* dark arrow*/
 }
 
 select::-ms-expand {
@@ -35,13 +35,23 @@ select:focus {
 }
 
 input[type='submit'] {
+	width: 10rem;
 	display: block;
-	margin: 1.5rem auto 0;
 	padding: 0.5rem 1rem;
-	border: none;
+	margin: 1.5rem auto 0;
 	background: $bColor;
 	color: $pColor;
+	border: none;
+	-webkit-transition-duration: 0.4s; /* Safari */
+	transition-duration: 0.4s;
 	text-transform: uppercase;
+}
+
+input[type='submit']:hover,
+input[type='submit']:focus {
+	background: $pColor;
+	box-shadow: $bShadow;
+	color: #000;
 }
 
 @media (min-width: 480px) {

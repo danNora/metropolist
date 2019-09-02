@@ -17,11 +17,6 @@
 	width: 50%;
 }
 
-.itemTitle {
-	width: 100%;
-	text-align: center;
-}
-
 .result1 {
 	.scoreBarFull {
 		display: flex;
@@ -42,6 +37,7 @@
 		right: -50%;
 	}
 }
+
 .result2 {
 	.lQItem {
 		flex-direction: row-reverse;
@@ -89,9 +85,12 @@
 }
 
 .itemTitle {
+	margin: 1rem auto 1px;
 	width: 100%;
 	font-size: 0.9rem;
-	flex: 1 1 100%;
+	font-weight: 400;
+	letter-spacing: 0;
+	text-align: center;
 }
 
 .scoreBar {

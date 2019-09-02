@@ -29,7 +29,7 @@ app.getAllCityData = cityEndpoints => {
 	//an array to sort promises into order
 	const cityPromises = [];
 
-	//loop through cityEndpoints array (argument to be passed by user), peform AJAX calls for every datapoint per endpoint, then push promises into cityPromises array
+	//loop through cityEndpoints array (argument to be passed by user), perform AJAX calls for every datapoint per endpoint, then push promises into cityPromises array
 	cityEndpoints.forEach(function(cityEndpoint) {
 		for (let i = 0; i < app.apiDataPoints.length; i++) {
 			const cityDataPoint = app.getCityPromise(
@@ -182,7 +182,6 @@ app.addDropdowns = function() {
 
 app.init = function() {
 	app.addDropdowns();
-	app.restart();
 
 	$('#submit').on('click', function(e) {
 		e.preventDefault();
@@ -206,6 +205,7 @@ app.init = function() {
 				: null;
 		}
 	});
+
 	$('.restart').on('click', app.restart);
 };
 

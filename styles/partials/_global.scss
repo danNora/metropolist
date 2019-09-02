@@ -10,6 +10,7 @@ body {
 	background-size: 350% 350%;
 	animation: gradientBG 5s linear infinite alternate;
 }
+
 @keyframes gradientBG {
 	0% {
 		background-position: 0% 50%;
@@ -19,49 +20,16 @@ body {
 	}
 }
 
-img {
-	display: block;
-	width: 100%;
-}
-
-h1,
-h2,
-h3 {
-	font-family: 'Lexend Deca', sans-serif;
-	text-transform: uppercase;
-}
-
-h3 {
-	font-size: 0.9rem;
-	font-weight: 400;
-	letter-spacing: 0;
-	margin: 1rem auto 1px;
-}
-
 .wrapper {
 	width: 90%;
 	margin: 0 auto;
 }
 
-input[type='submit'] {
-	margin: 1rem auto 0;
-	position: relative;
-	background-color: $bColor;
-	border: none;
-	padding: 20px;
-	width: 200px;
-	text-align: center;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-	text-decoration: none;
-	overflow: hidden;
-}
-
-input[type='submit']:hover,
-input[type='submit']:focus {
-	background: $pColor;
-	box-shadow: $bShadow;
-	color: #000;
+h1,
+h2,
+h3 {
+	font-family: $hFont;
+	text-transform: uppercase;
 }
 
 ul {
