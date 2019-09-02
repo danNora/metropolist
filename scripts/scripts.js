@@ -77,10 +77,11 @@ app.displayAllCityData = function(cityObjects) {
 			'background-image',
 			`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(${cityImageUrl})`
 		);
-
+		
 		// Create ul element for every score
 		const $scoresList = $('<ul class="lQItems">');
 
+		let delayLength = 500;
 		// Loop through all scores, convert to jQuery li element, and append to ul
 		const cityScoreArray = city['/scores']['categories'];
 		cityScoreArray.forEach(function(score) {
@@ -89,10 +90,12 @@ app.displayAllCityData = function(cityObjects) {
 			const $scoreNum = $('<span class="scoreNum">').text(
 				score['score_out_of_10'] ? score['score_out_of_10'].toFixed(1) : 'N/A'
 			);
+
 			//score bar
 			const $scoreBarFull = $('<div class="scoreBar scoreBarFull">');
 			const $scoreBarFill = $('<div class="scoreBar scoreBarFill">')
-				.css('background', score['color'])
+				.css({'background': score['color'], 'width': 0})
+				.delay(delayLength += 200)
 				.animate({
 					width: score['score_out_of_10'] * 10 + '%',
 				}, 1000);
@@ -152,9 +155,8 @@ app.displayTotal = function() {
 // method to start another search
 app.restart = function() {
 	app.smoothScroll('header');
-	$('select').val('');
-	setTimeout(function() {
-		$('.results').toggleClass('results resultsHidden');
+	setTimeout(() => {
+		$('.location1').focus();
 	}, 1000);
 };
 

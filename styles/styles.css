@@ -657,13 +657,13 @@ footer {
   color: ivory;
 }
 
-.copyright .fa-github:hover,
-.copyright .fa-github:focus {
+.copyright .github:hover,
+.copyright .github:focus {
   color: #24292e;
 }
 
-.copyright .fa-twitter:hover,
-.copyright .fa-twitter:focus {
+.copyright .twitter:hover,
+.copyright .twitter:focus {
   color: #1da1f2;
 }
 
