@@ -30,15 +30,13 @@ app.getAllCityData = cityEndpoints => {
 		.then(results => {
 			$('.resultsHidden').toggleClass('resultsHidden results');
 			$('.result1, .result2').empty();
-			// const cityResults = results.map(result => result[0]);
-			const cityResults = results;
 
 			const cityObjects = [];
-			for (let i = 0; i < cityResults.length; i += app.apiDataPoints.length) {
+			for (let i = 0; i < results.length; i += app.apiDataPoints.length) {
 				const cityObject = {};
 
 				for (let j = 0; j < app.apiDataPoints.length; j++) {
-					cityObject[app.apiDataPoints[j]] = cityResults[i + j];
+					cityObject[app.apiDataPoints[j]] = results[i + j];
 				}
 
 				cityObjects.push(cityObject);
@@ -47,32 +45,28 @@ app.getAllCityData = cityEndpoints => {
 			app.displayAllCityData(cityObjects);
 		})
 		.catch(() => {
-			$('main').append(`<p>Please try a different city</p>`);
+			$('.error').text(`No results returned. Please try again.`);
 		});
-};
+	};
 
 app.displayAllCityData = function(cities) {
-	//An overall score of the city given by Teleport
-	// const cityTeleportScore = cityData['/scores']['teleport_city_score'].toFixed(1)
-
-	// A div>ul to house all the <li>
-	// const $result = $(`<div class="result ${cssClasses}">`);
-
 	cities.forEach((city, index) => {
 		const $scoresList = $('<ul class="lQItems">');
 
 		// Get city image url
 		const cityImageUrl = city['/images'].photos[0].image.mobile;
-
+		
 		// Get data out of objects
 		const fullCityName = city['/']['full_name'];
+
 		const $cityNameHtml = $(
-			`<div class="cityNameFlexbox"><h2>${fullCityName}</h2></div>`
+			`<div class="cityNameFlexbox"><h2 class="cityName">${fullCityName}</h2></div>`
 		).css(
 			'background-image',
-			`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${cityImageUrl})`
-		);
-
+			`linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(${cityImageUrl})`
+		)
+		
+		
 		const cityScoreArray = city['/scores']['categories'];
 
 		cityScoreArray.forEach(function(score) {
@@ -83,22 +77,22 @@ app.displayAllCityData = function(cities) {
 
 			const $scoreNum = $('<span class="scoreNum">').text(
 				score['score_out_of_10'] ? score['score_out_of_10'].toFixed(1) : 'N/A'
-			);
-			//score bar
+				);
+				//score bar
 			const $scoreBarFull = $('<div class="scoreBar scoreBarFull">');
 			const $scoreBarFill = $('<div class="scoreBar scoreBarFill">').css({
 				width: score['score_out_of_10'] * 10 + '%',
 				background: score['color']
 			});
 			$scoreBarFull.html($scoreBarFill);
-
+			
 			//appending itemTitle, score number, score bar to an li.lQItem
 			$score.append($itemTitle, $scoreNum, $scoreBarFull);
-
+			
 			//appending li.lQItem to ul.lQItems
 			$scoresList.append($score);
 		});
-
+		
 		if (cities.length === 2) {
 			$(`.result${index + 1}`).append($cityNameHtml, $scoresList);
 		} else {
@@ -107,21 +101,20 @@ app.displayAllCityData = function(cities) {
 			$result.append($cityNameHtml, $scoresList);
 			$('.results').append($result);
 		}
-	});
-};
 
-// app.cleanUserInput = function(inputValue) {
-// 	return inputValue
-// 		.trim()
-// 		.toLowerCase()
-// 		.split(' ')
-// 		.join('-');
-// };
+		if (fullCityName.length > 15) {
+			$('.cityName').addClass('longName');
+		}
+	});
+	
+
+	app.smoothScroll('.results');
+};
 
 app.restart = function() {
 	$('.restart').on('click', function() {
 		app.smoothScroll('header');
-		$('input[type=text]').val('');
+		$('select').val('');
 		setTimeout(function() {
 			$('.results').toggleClass('results resultsHidden');
 		}, 1500);
@@ -136,14 +129,17 @@ app.init = function() {
 
 		app.cityEndpoint1 = $('.location1').val();
 		app.cityEndpoint2 = $('.location2').val();
-
+		
 		if (app.cityEndpoint1 && app.cityEndpoint2) {
+			$('.error').empty();
 			app.getAllCityData([app.cityEndpoint1, app.cityEndpoint2]);
-			app.smoothScroll('#results');
 		} else {
-			$('main').append('<p>Please choose some cities!</p>');
+			$('.error').text(`You're missing some cities...`);
+			!$('.location1').val() ? $('.location1').effect('shake', { distance: 5 }) : null;
+			!$('.location2').val() ? $('.location2').effect('shake', { distance: 5 }) : null;
 		}
 	});
+
 	app.restart();
 };
 
@@ -153,7 +149,7 @@ app.addDropdowns = function() {
 		method: 'GET',
 		dataType: 'json'
 	});
-
+	
 	urbanAreasPromise.then(urbanAreas => {
 		urbanAreas['_links']['ua:item'].forEach(urbanArea => {
 			$('.location1').append(
@@ -168,12 +164,11 @@ app.addDropdowns = function() {
 
 app.smoothScroll = function(elementId) {
 	$('html, body')
-		.delay(500)
 		.animate(
 			{
 				scrollTop: $(elementId).offset().top
 			},
-			600
+			500
 		);
 };
 

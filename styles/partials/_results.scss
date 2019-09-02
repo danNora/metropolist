@@ -51,10 +51,14 @@
 	}
 }
 
-h2 {
+.cityName {
 	max-width: 100%;
 	color: white;
-	font-size: 1.1rem;
+	font-size: 1rem;
+}
+
+.longName {
+	font-size: 0.7rem;
 }
 
 .cityNameFlexbox {
@@ -115,9 +119,12 @@ h2 {
 }
 
 @media (min-width: 768px) {
-	.cityNameFlexbox {
-		position: sticky;
-		top: 0;
-		z-index: 10;
+	.longName {
+		font-size: 1.1rem;
 	}
+	// .cityNameFlexbox {
+	// 	position: sticky;
+	// 	top: 0;
+	// 	z-index: 10;
+	// }
 }

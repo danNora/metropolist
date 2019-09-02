@@ -20,8 +20,10 @@ footer {
 	.fa-twitter:hover, .fa-twitter:focus{
 		color: $tColor;
 	}
+	.portfolio:hover,.portfolio:focus {
+		color: $bColor;
+	}
 }
-
 
 @media (min-width: 768px) {
 	footer {

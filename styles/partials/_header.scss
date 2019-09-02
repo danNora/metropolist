@@ -7,21 +7,19 @@
 }
 
 header {
-	text-shadow: 1px 1px $sColor;
 	margin: 0;
 	width: 100%;
-	font-family: 'Montserrat', sans-serif;
-	color: #fff;
-
+	font-family: $mFont;
+	color: $pColor;
 	text-align: center;
 }
 
 h1 {
 	letter-spacing: 0.5rem;
+	text-shadow: 1px 1px $sColor;
 }
 
-
-.octoSvg{
+.octoSvg {
 	width: 80px;
 	height: 80px;
 	fill:$pColor;
@@ -38,10 +36,9 @@ h1 {
 	fill:$gColor;
 }
 .githubCorner:hover .octoArm, .githubCorner:focus .octoArm {
-	 animation: octocatWave 560ms ease-in-out infinite;
-	 
+	animation: octocatWave 560ms ease-in-out infinite;
 }
-    
+
 @keyframes octocatWave {
 0%,
 100% {

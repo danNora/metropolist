@@ -180,8 +180,8 @@ body {
   text-align: center;
   background: linear-gradient(-45deg, #48e040, #ff8c00, #ff003c, #6923cb);
   background-size: 350% 350%;
-  -webkit-animation: gradientBG 8s linear infinite alternate;
-          animation: gradientBG 8s linear infinite alternate;
+  -webkit-animation: gradientBG 5s linear infinite alternate;
+          animation: gradientBG 5s linear infinite alternate;
 }
 
 @-webkit-keyframes gradientBG {
@@ -270,16 +270,16 @@ ul {
 }
 
 header {
-  text-shadow: 1px 1px silver;
   margin: 0;
   width: 100%;
-  font-family: 'Montserrat', sans-serif;
-  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  color: ivory;
   text-align: center;
 }
 
 h1 {
   letter-spacing: 0.5rem;
+  text-shadow: 1px 1px silver;
 }
 
 .octoSvg {
@@ -352,9 +352,42 @@ h1 {
   }
 }
 
-option {
-  color: black;
-  width: 5rem;
+select {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.5rem;
+  text-overflow: '';
+  border: 1px solid ivory;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.5rem) 50%;
+  background-size: 0.6rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 1px 0;
+          box-shadow: rgba(0, 0, 0, 0.15) 0 1px 0;
+  color: #24292e;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+DQo8cG9seWdvbiBvcGFjaXR5PSIwLjciIHBvaW50cz0iMCw0IDE2LDQgOCwxMiIvPg0KPC9zdmc+DQo=");
+  /* dark arrow*/
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  border-color: #24292e;
+  -webkit-box-shadow: 0 0 0.25rem 0.1rem ivory;
+          box-shadow: 0 0 0.25rem 0.1rem ivory;
+}
+
+.location1 {
+  margin-bottom: 1rem;
+}
+
+.error {
+  width: 100%;
+  min-height: 1.3rem;
 }
 
 input[type='submit'] {
@@ -378,7 +411,10 @@ input[type='submit'] {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  input[type='text'] {
+  .location1 {
+    margin-bottom: 0;
+  }
+  select {
     width: 45%;
     max-width: 20rem;
   }
@@ -448,10 +484,14 @@ input[type='submit'] {
   opacity: 0;
 }
 
-h2 {
+.cityName {
   max-width: 100%;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
+}
+
+.longName {
+  font-size: 0.7rem;
 }
 
 .cityNameFlexbox {
@@ -530,11 +570,8 @@ h2 {
 }
 
 @media (min-width: 768px) {
-  .cityNameFlexbox {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+  .longName {
+    font-size: 1.1rem;
   }
 }
 
@@ -566,6 +603,10 @@ footer {
 
 .copyright .fa-twitter:hover, .copyright .fa-twitter:focus {
   color: #1da1f2;
+}
+
+.copyright .portfolio:hover, .copyright .portfolio:focus {
+  color: #36cc24;
 }
 
 @media (min-width: 768px) {

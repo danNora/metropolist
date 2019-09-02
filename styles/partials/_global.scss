@@ -8,7 +8,7 @@ body {
 	text-align: center;
 	background: $gradient;
 	background-size: 350% 350%;
-	animation: gradientBG 8s linear infinite alternate;
+	animation: gradientBG 5s linear infinite alternate;
 }
 @keyframes gradientBG {
 	0% {
@@ -23,6 +23,7 @@ img {
 	display: block;
 	width: 100%;
 }
+
 h1,
 h2,
 h3 {

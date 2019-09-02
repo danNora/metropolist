@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link href="https://fonts.googleapis.com/css?family=Lexend+Deca|Montserrat&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="./styles/styles.css" type="text/css" />
   <title>City Comparison App</title>
 
-  <!-- CSS file -->
-  <link rel="stylesheet" href="./styles/styles.css" type="text/css" />
 </head>
 
 <body>
   <header>
-
+    <!-- GitHub repo corner link -->
     <a href="https://github.com/danNora/projectFour" class="githubCorner" aria-label="View source on GitHub"
       target="_blank" rel="noopener noreferrer" title="View source on Github">
       <svg class="octoSvg" viewBox="0 0 250 250" aria-hidden="true">
@@ -33,36 +36,39 @@
       <p class="appDescription">Compare the quality of life between two major cities</p>
 
       <form action="" class="setLocations">
+        <label for="location1" class="visuallyHidden">Choose your first city.</label>
         <select name="location1" id="location1" class="location1">
           <option value="">Select a city...</option>
           <!-- Options go here -->
         </select>
+        <label for="location2" class="visuallyHidden">Choose your second city.</label>
         <select name="location2" id="location2" class="location2">
           <option value="">Select a city...</option>
           <!-- Options go here -->
         </select>
-        <label for="location1" class="visuallyHidden">City1</label>
-        <!-- <input type="text" class="location" id="location1" placeholder="City1" /> -->
-        <!-- <label for="location2" class="visuallyHidden">City2</label> -->
-        <!-- <input type="text" class="location" id="location2" placeholder="City2" /> -->
+        <p class="error">
+          <!-- Error handling goes here -->
+        </p>
+
         <input type="submit" value="compare!" id="submit" class="button" />
       </form>
     </div>
   </header>
+  
   <main>
     <section class="resultsHidden" id="results">
       <div class="result result1"></div>
       <div class="result result2"></div>
       <button class="restart">Restart</button>
     </section>
-    <!-- end of input section -->
   </main>
+
   <footer>
     <div class="wrapper">
       <p class="copyright">
-        Made with ‍👩‍💻👨‍💻 by
-        <a href="https://norazheng.com" target="_blank" rel="noopener noreferrer">
-          Nora Zheng
+        Made with ‍👩‍💻👨‍💻 by 
+        <a class="portfolio" href="https://norazheng.com" target="_blank" rel="noopener noreferrer">
+        Nora Zheng
         </a>
         <a href="https://github.com/norazheng" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github" aria-hidden=true></i>
@@ -72,9 +78,9 @@
           <i class="fab fa-twitter" aria-hidden=true></i>
           <span class="sr-only">Twitter</span>
         </a>
-        and
-        <a href="https://danielfitz.com" target="_blank" rel="noopener noreferrer">
-          Dan Fitz
+         and 
+        <a class="portfolio" href="https://danielfitz.com" target="_blank" rel="noopener noreferrer">
+        Dan Fitz
         </a>
         <a href="https://github.com/danielfitz" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github" aria-hidden=true></i>
@@ -90,10 +96,12 @@
 
   <!-- jQuery CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- jQuery UI CDN -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
   <!-- Font Awesome CDN -->
   <script src='https://kit.fontawesome.com/94656c5317.js'></script>
   <!-- scripts.js file -->
   <script src="./scripts/scripts.js"></script>
 </body>
-
 </html>
