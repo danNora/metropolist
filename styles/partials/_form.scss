@@ -1,23 +1,27 @@
-input[type='text'] {
-	width: calc(100% - 0.5rem);
-	background: transparent;
-	margin: 0.25rem;
-	padding: 0.25rem;
-	border: none;
-	border-bottom: 0.1rem solid $pColor;
-	text-transform: uppercase;
-	text-align: center;
-	color: $pColor;
-	text-shadow: 0.05rem 0.05rem grey;
-	box-shadow: 0px 0.05rem grey;
-}
+// input[type='text'] {
+// 	width: calc(100% - 0.5rem);
+// 	background: transparent;
+// 	margin: 0.25rem;
+// 	padding: 0.25rem;
+// 	border: none;
+// 	border-bottom: 0.1rem solid $pColor;
+// 	text-transform: uppercase;
+// 	text-align: center;
+// 	color: $pColor;
+// 	text-shadow: 0.05rem 0.05rem grey;
+// 	box-shadow: 0px 0.05rem grey;
+// }
 
-input[type='text']:hover,
-input[type='text']:focus {
-	box-shadow: 0 0 0 0.1rem $pColor;
-	transition: all 0.2s;
-}
+// input[type='text']:hover,
+// input[type='text']:focus {
+// 	box-shadow: 0 0 0 0.1rem $pColor;
+// 	transition: all 0.2s;
+// }
 
+option {
+	color: black;
+	width: 5rem;
+}
 input[type='submit'] {
 	display: block;
 	margin: 1.5rem auto 0;

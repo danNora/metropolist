@@ -4,8 +4,8 @@ const app = {};
 app.apiDataPoints = ['/', '/images', '/scores'];
 
 //a method to return an ajax call promise for each query
-app.getCityPromise = function(cityName, dataPoint) {
-	const endpoint = `https://api.teleport.org/api/urban_areas/slug:${cityName}${dataPoint}`;
+app.getCityPromise = function(cityEndpoint, dataPoint) {
+	const endpoint = cityEndpoint + dataPoint;
 	return $.ajax({
 		url: endpoint,
 		method: 'GET',
@@ -13,12 +13,15 @@ app.getCityPromise = function(cityName, dataPoint) {
 	});
 };
 
-app.getAllCityData = cityNames => {
+app.getAllCityData = cityEndpoints => {
 	const cityPromises = [];
 
-	cityNames.forEach(async function(cityName) {
+	cityEndpoints.forEach(async function(cityEndpoint) {
 		for (let i = 0; i < app.apiDataPoints.length; i++) {
-			const cityDataPoint = app.getCityPromise(cityName, app.apiDataPoints[i]);
+			const cityDataPoint = app.getCityPromise(
+				cityEndpoint,
+				app.apiDataPoints[i]
+			);
 			cityPromises.push(cityDataPoint);
 		}
 	});
@@ -43,8 +46,7 @@ app.getAllCityData = cityNames => {
 
 			app.displayAllCityData(cityObjects);
 		})
-		.catch(errors => {
-			console.log(errors);
+		.catch(() => {
 			$('main').append(`<p>Please try a different city</p>`);
 		});
 };
@@ -108,13 +110,13 @@ app.displayAllCityData = function(cities) {
 	});
 };
 
-app.cleanUserInput = function(inputValue) {
-	return inputValue
-		.trim()
-		.toLowerCase()
-		.split(' ')
-		.join('-');
-};
+// app.cleanUserInput = function(inputValue) {
+// 	return inputValue
+// 		.trim()
+// 		.toLowerCase()
+// 		.split(' ')
+// 		.join('-');
+// };
 
 app.restart = function() {
 	$('.restart').on('click', function() {
@@ -127,18 +129,41 @@ app.restart = function() {
 };
 
 app.init = function() {
+	app.addDropdowns();
+
 	$('#submit').on('click', function(e) {
 		e.preventDefault();
 
-		app.userCity1 = app.cleanUserInput($('#location1').val());
-		app.userCity2 = app.cleanUserInput($('#location2').val());
+		app.cityEndpoint1 = $('.location1').val();
+		app.cityEndpoint2 = $('.location2').val();
 
-		app.getAllCityData([app.userCity1, app.userCity2]);
-		// app.displayCityData(app.userCity2, '.result2');
-
-		app.smoothScroll('#results');
+		if (app.cityEndpoint1 && app.cityEndpoint2) {
+			app.getAllCityData([app.cityEndpoint1, app.cityEndpoint2]);
+			app.smoothScroll('#results');
+		} else {
+			$('main').append('<p>Please choose some cities!</p>');
+		}
 	});
 	app.restart();
+};
+
+app.addDropdowns = function() {
+	const urbanAreasPromise = $.ajax({
+		url: 'https://api.teleport.org/api/urban_areas/',
+		method: 'GET',
+		dataType: 'json'
+	});
+
+	urbanAreasPromise.then(urbanAreas => {
+		urbanAreas['_links']['ua:item'].forEach(urbanArea => {
+			$('.location1').append(
+				$(`<option value=${urbanArea.href}>`).text(urbanArea.name)
+			);
+			$('.location2').append(
+				$(`<option value=${urbanArea.href}>`).text(urbanArea.name)
+			);
+		});
+	});
 };
 
 app.smoothScroll = function(elementId) {
