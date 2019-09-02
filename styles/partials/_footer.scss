@@ -3,25 +3,33 @@ footer {
 	align-items: center;
 	height: calc(15vh - 1.5rem);
 	margin: 0.75rem 0;
-
 }
 .copyright {
 	margin: 0;
 	color: $pColor;
-	font-size: 0.9rem;
+	font-size: 0.7rem;
 
 	a {
 		text-decoration: none;
 		color: $pColor;
 	}
-	.fa-github:hover, .fa-github:focus {
+	.fa-github:hover,
+	.fa-github:focus {
 		color: $gColor;
 	}
-	.fa-twitter:hover, .fa-twitter:focus{
+	.fa-twitter:hover,
+	.fa-twitter:focus {
 		color: $tColor;
 	}
-	.portfolio:hover,.portfolio:focus {
+	.portfolio:hover,
+	.portfolio:focus {
 		color: $bColor;
+	}
+}
+
+@media (min-width: 480px) {
+	.copyright {
+		font-size: 0.9rem;
 	}
 }
 

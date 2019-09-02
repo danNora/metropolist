@@ -109,6 +109,7 @@
 	border: 2px solid $bColor;
 	background: $bColor;
 	color: $pColor;
+	text-transform: uppercase;
 }
 
 .restart:hover,
@@ -122,9 +123,4 @@
 	.longName {
 		font-size: 1.1rem;
 	}
-	// .cityNameFlexbox {
-	// 	position: sticky;
-	// 	top: 0;
-	// 	z-index: 10;
-	// }
 }

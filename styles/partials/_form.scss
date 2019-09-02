@@ -10,7 +10,7 @@ select {
 	background-repeat: no-repeat;
 	background-position: calc(100% - 0.5rem) 50%;
 	background-size: 0.6rem;
-	box-shadow: rgba(0, 0, 0, .15) 0 1px 0;
+	box-shadow: rgba(0, 0, 0, 0.15) 0 1px 0;
 	color: $gColor;
 	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+DQo8cG9seWdvbiBvcGFjaXR5PSIwLjciIHBvaW50cz0iMCw0IDE2LDQgOCwxMiIvPg0KPC9zdmc+DQo=');
 	/* dark arrow*/
@@ -25,7 +25,9 @@ select:focus {
 	box-shadow: $bShadow;
 }
 
-.location1 { margin-bottom: 1rem; }
+.location1 {
+	margin-bottom: 1rem;
+}
 
 .error {
 	width: 100%;
@@ -39,6 +41,7 @@ input[type='submit'] {
 	border: none;
 	background: $bColor;
 	color: $pColor;
+	text-transform: uppercase;
 }
 
 @media (min-width: 480px) {
@@ -47,8 +50,10 @@ input[type='submit'] {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	
-	.location1 { margin-bottom: 0; }
+
+	.location1 {
+		margin-bottom: 0;
+	}
 
 	select {
 		width: 45%;

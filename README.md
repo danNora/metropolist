@@ -1,20 +1,27 @@
-# City Comparison App
+# Metropolist
 
-## MVP
+Using **Metropolist**, you can compare the quality of life between two major cities. Simply input 2 cities (from a list of 266), and you get a side-by-side comparison of factors like housing, venture capital, safety, taxation, and more.
 
-* City comparison app that displays side-by-side quality of life data between two “urban areas” returned from Teleport API
-* User choose two cities to compare through text input
-* Comparison results are dynamically updated
+## Attributions
 
-## Todos:
+Resources and tools used include:
 
-Todos have been moved to Trello 
+- [Teleport API](https://developers.teleport.org/api/)
+- [jQuery](https://api.jquery.com/)
+- [jQuery UI](https://api.jqueryui.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [Lexend Deca Google Font](https://fonts.google.com/specimen/Lexend+Deca)
+- [Montserrat Google Font](https://fonts.google.com/specimen/Montserrat)
+- [Favicon Converter](https://favicon.io/favicon-converter/)
 
-## Stretch Goals
+## Creators
 
-* Ability to compare urban areas in an entire country
-* Same for continent
-* Search autocomplete
-* User toggles to personally weight the data
-* Definitive answer that city A is better than city B
-* Gamify the app
+Dan Fitz
+[danielfitz.com](https://danielfitz.com)
+[Twitter](https://twitter.com/_danielfitz)
+[Github](https://github.com/danielfitz)
+
+Nora Zheng
+[norazheng.com](https://norazheng.com)
+[Twitter](https://twitter.com/nuozheng)
+[GitHub](https://github.com/norazheng)
