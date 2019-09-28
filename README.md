@@ -10,7 +10,7 @@ Using **Metropolist**, you can compare the quality of life between two major cit
 - CSS (via Sass)
 - Responsive design, semantic HTML, accessibility included too
 
-## Featured Roadmap
+## Feature Roadmap
 
 - Convert from jQuery to React
 - Convert city selection from dropdown to auto-completing input
