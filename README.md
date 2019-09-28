@@ -17,7 +17,7 @@ Resources and tools used include:
 ## Creators
 
 Dan Fitz
-[danielfitz.com](https://danfitz.com)
+[danfitz.com](https://danfitz.com)
 [Twitter](https://twitter.com/_danfitz)
 [Github](https://github.com/danfitz)
 
